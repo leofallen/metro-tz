@@ -82,7 +82,7 @@ export default {
 
 
   .info {
-    padding: 88px calc(50% - 512px);
+    padding: 88px calc(50% - 494px);
 
     &_title {
       margin: 0;

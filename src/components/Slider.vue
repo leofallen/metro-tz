@@ -133,7 +133,41 @@
     margin-top: 50px;
     margin-bottom: 70px;
 
+    .swiper-slide {
+      padding-bottom: 70px;
+    }
+
+    .swiper-button-prev {
+     margin-left: auto;
+    }
+
+    .swiper-button-next {
+      margin-left: 10px;
+    }
+  
+    .swiper-button-next,
+    .swiper-button-prev {
+      position: static;
+  
+      width: 40px;
+      height: 40px;
+      margin-top: -55px;
+  
+      border-radius: 50%;
+      background-color: $light-red;
+    }
+  
+    .swiper-pagination {
+      bottom: 35px;
+  
+      text-align: left;
+  
+      font-family: $noto-font;
+      font-size: 15px;
+    }
+
     & img {
+      width: 100%;
       height: auto;
     } 
 
@@ -148,11 +182,12 @@
 
     &_caption {
       position: absolute;
-      bottom: -52px;
+      top: 103%;
       left: 64px;
 
-      width: 571px;
+      max-width: 571px;
       padding: 0 20px;
+      margin-right: 80px;
 
 
       font-family: $noto-font;
@@ -163,41 +198,15 @@
   }
 
 
-  .swiper-button-prev {
-    margin-left: auto;
-  }
 
-  .swiper-button-next {
-    margin-left: 10px;
-  }
-
-  .swiper-button-next,
-  .swiper-button-prev {
-    position: static;
-
-    width: 40px;
-    height: 40px;
-    margin-top: 15px;
-
-    border-radius: 50%;
-    background-color: $light-red;
-  }
-
-  .swiper-pagination {
-    bottom: 20px;
-
-    text-align: left;
-
-    font-family: $noto-font;
-    font-size: 15px;
-  }
 
   @media (max-width: 1024px) {
     .slider {
       max-width: 780px;
 
-      & img {
-        width: 780px;
+      &_caption {
+        max-width: 500px;
+        padding-left: 0;
       }
     }
   }
@@ -205,10 +214,6 @@
   @media (max-width: 768px) {
     .slider {
       max-width: 688px;
-
-      & img {
-        width: 688px;
-      }
     }
   }
 
@@ -216,6 +221,10 @@
     .slider {
       .swiper-pagination {
         text-align: center;
+      }
+
+      .swiper-pagination {
+        bottom: 0;
       }
 
       .swiper-pagination-bullet {
@@ -236,8 +245,8 @@
       position: static;
 
       width: 290px;
+      margin: 0 auto;
       padding: 0;
-      margin: 0;
       text-align: center;
      }
 
@@ -249,11 +258,7 @@
 
   @media (max-width: 320px) {
     .slider {
-    max-width: 290px;
-
-    & img {
-      width: 290px;
-    }
+      max-width: 290px;
     }
   }
 
