@@ -24,8 +24,12 @@
     <div class="swiper-pagination"></div>
 
     <div class="slider_buttons">
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev slider_buttons-item">
+        <img src="/img/icon-white-arrow.svg" alt="arrow">
+      </div>
+      <div class="swiper-button-next slider_buttons-item">
+        <img src="/img/icon-white-arrow.svg" alt="arrow">
+      </div>
     </div>
 
 
@@ -52,10 +56,6 @@
       }),
     },
 
-    beforeMount () {
-      console.log(this.img)
-    },
-  
     mounted() {
       let mobile = window.matchMedia("(max-width: 550px)");
 
@@ -131,18 +131,22 @@
   .slider {
     max-width: 820px;
     margin-top: 50px;
-    margin-bottom: 70px;
+    margin-bottom: 55px;
 
     .swiper-slide {
       padding-bottom: 70px;
     }
 
     .swiper-button-prev {
-     margin-left: auto;
+      margin-left: auto;
     }
 
     .swiper-button-next {
       margin-left: 10px;
+
+      & img {
+        transform: rotate(180deg);
+      }
     }
   
     .swiper-button-next,
@@ -173,6 +177,20 @@
 
     &_buttons {
       display: flex;
+    }
+
+    &_buttons-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      & img {
+        width: 15px;
+      }
+
+      &:hover {
+        opacity: 0.6;
+      }
     }
 
     &_slide {

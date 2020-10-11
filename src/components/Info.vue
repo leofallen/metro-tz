@@ -4,11 +4,11 @@
     <h1 class="info_title">О нас</h1>
 
     <div class="info_link-wrapper">
-      <a class="info_link" href="">Основная информация</a>
-      <a class="info_link" href="">Новости</a>
+      <a class="info_link info_link--info" href="">Основная информация</a>
+      <a class="info_link info_link--news" href="">Новости</a>
     </div>
 
-    <p class="info_text">
+    <p class="info_text" id="info-block">
       Селекция бренда, анализируя результаты рекламной кампании, осмысленно масштабирует 
       SWOT-анализ. Перераспределение бюджета, как следует из вышесказанного, переворачивает 
       коллективный контент. Поэтому управление брендом искажает социометрический ребрендинг: 
@@ -71,8 +71,32 @@ export default {
 
     }
   },
+
   components: {
     AppSlider,
+  },
+
+  mounted() {
+    let infoLink = document.querySelector('.info_link--info');
+    let newsLink = document.querySelector('.info_link--news');
+    let infoAnkor = document.querySelector('#info-block');
+    let newsAnkor = document.querySelector('#news-block');
+
+    infoLink.addEventListener('click', (evt) => {
+      evt.preventDefault();
+      infoAnkor.scrollIntoView({
+        block: "start",
+        behavior: "smooth"
+      });
+    });
+
+    newsLink.addEventListener('click', (evt) => {
+      evt.preventDefault();
+      newsAnkor.scrollIntoView({
+        block: "start",
+        behavior: "smooth"
+      });
+    });
   }
 }
 </script>
@@ -82,7 +106,7 @@ export default {
 
 
   .info {
-    padding: 88px calc(50% - 494px);
+    padding: 88px calc(50% - 494px) 20px;
 
     &_title {
       margin: 0;
@@ -178,6 +202,10 @@ export default {
       line-height: 24px;
       color: $black;
 
+      &:hover {
+        color: $light-red;
+      }
+
       &::after {
         content: "";
         position: absolute;
@@ -190,7 +218,6 @@ export default {
         background-image: url('/img/icon-arrow.svg');
         background-repeat: no-repeat;
         background-position: 0 0;
-
       }
     }
 

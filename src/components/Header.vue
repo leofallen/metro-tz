@@ -97,6 +97,10 @@ export default {
         line-height: 24px;
         letter-spacing: 0.01em;
         opacity: 0.6;
+
+        &:hover {
+          opacity: 0.5 !important;
+        }
       }
 
       &--tel,
@@ -104,6 +108,12 @@ export default {
         margin-left: 30px;
 
         background-color: $dark-turquoise;
+      }
+
+      &:hover {
+        opacity: 0.6;
+
+        cursor: pointer;
       }
     }
 

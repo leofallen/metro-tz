@@ -9,6 +9,7 @@
            :key="i"
            @click="onClick(i)"
       >
+        <div class="accordion_item-hover"></div>
         <button class="accordion_button"></button>
         <h3 class="accordion_title">{{ item.title }}</h3>
         <h2 class="accordion_sub-title">{{ item.subTitle }}</h2>
@@ -107,6 +108,22 @@
 
 <style lang="scss">
   @import "../sass/global.scss";
+
+  @media (min-width: 550px) {
+    .accordion_item-hover {
+      position: absolute;
+      z-index: 11;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      &:hover {
+        background-color: #fff;
+        opacity: 0.2;
+      }
+    }
+  }
 
   .accordion {
     min-height: 720px;
@@ -223,9 +240,11 @@
   }
 
   @media (min-width: 769px) {
-
-    // animation classes des
     .open {
+      .accordion_item-hover {
+        display: none;
+      }
+
       .accordion_button {
         transform: translate(0, -300px)
                    rotate(135deg);
