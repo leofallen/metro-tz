@@ -1,14 +1,14 @@
 <template>
   <div>
     <app-header></app-header>
-    <app-about></app-about>
+    <app-info></app-info>
     <app-accordion></app-accordion>
   </div>
 </template>
 
 <script>
 import AppHeader from "./components/Header";
-import AppAbout from "./components/About";
+import AppInfo from "./components/Info";
 import AppAccordion from "./components/Accordion";
 
 export default {
@@ -19,7 +19,7 @@ export default {
   },
     components: {
     AppHeader,
-    AppAbout,
+    AppInfo,
     AppAccordion,
   }
 }

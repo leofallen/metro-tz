@@ -1,14 +1,32 @@
 <template>
 
   <header class="main-header">
-    <nav class="main-header_menu">
-      <span class="main-header_icon main-header_icon--menu"></span>
+    <nav class="main-header_burger">
+      <span class="main-header_icon main-header_icon--burger"
+            @click='onClick'
+            >
+        <span class="main-header_burger"
+              :class="menuOpen ? 'main-header_burger--open' : ''"
+              ></span>
+        <span class="main-header_burger"
+              :class="menuOpen ? 'main-header_burger--open' : ''"
+              ></span>
+        <span class="main-header_burger"
+              :class="menuOpen ? 'main-header_burger--open' : ''"
+              ></span>
+      </span>
     </nav>
     <h3 class="main-header_title">
       <span>метро</span>
       </h3>
-    <span class="main-header_icon main-header_icon--lang"></span>
-    <a class="main-header_icon main-header_icon--tel" href="tel:89458888888"></a>
+    <div class="main-header_icon-wrapper">
+      <span class="main-header_icon main-header_icon--lang">
+      <span>En</span>
+      </span>
+      <a class="main-header_icon main-header_icon--tel" href="tel:89458888888">
+      <img src="/img/icon-tel.svg" alt="tel">
+    </a>
+    </div>
   </header>
 
 </template>
@@ -16,7 +34,17 @@
 <script>
 
 export default {
+  data() {
+    return {
+      menuOpen: false,
+    }
+  },
   
+  methods: {
+    onClick() {
+      this.menuOpen = this.menuOpen ? false : true;
+    }
+  }
 }
 </script>
 
@@ -26,18 +54,49 @@ export default {
 
   .main-header {
     display: flex;
+    justify-content: space-between;
     padding: 40px;
 
+    &_burger {
+      width: 26px;
+      height: 2px;
+      margin-bottom: 3px;
+
+      background-color: $white;
+
+      &:first-child {
+        margin-top: 2px;
+      }
+    }
+
+    &_burger--open {
+      margin-bottom: 5px;
+
+    }
+
     &_icon {
-      display: block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
       width: 60px;
       height: 60px;
       border-radius: 50%;
 
-      &--menu {
-        margin-right: 118px;
+      &--burger {
+        flex-direction: column;
 
         background-color: $light-red;
+      }
+
+      &--lang {
+        font-family: $noto-font;
+        color: $white;
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 24px;
+        letter-spacing: 0.01em;
+        opacity: 0.6;
       }
 
       &--tel,
@@ -48,11 +107,14 @@ export default {
       }
     }
 
+    &_icon-wrapper {
+      display: flex;;
+    }
+
     &_title {
       margin-top: 0;
       margin-bottom: 0;
-      margin-right: auto;
-      margin-left: auto;
+      margin-left: 11%;
       padding-top: 15px;
 
       font-family: $noto-font;
@@ -73,6 +135,10 @@ export default {
   @media (max-width: 550px) {
     .main-header {
       padding: 10px;
+
+      &_burger {
+        width: 24px;
+      }
 
       &_icon {
         width: 50px;
