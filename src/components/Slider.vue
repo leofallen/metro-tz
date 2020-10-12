@@ -44,16 +44,16 @@
 
   import Swiper from 'swiper/swiper-bundle';
   import 'swiper/swiper-bundle.css';
+  import mocks from '../mocks/mock';
 
-  import { mapGetters } from 'vuex';
 
   export default {
 
-    computed: {
-      ...mapGetters({
-        img: 'images',
-        captions: 'imagesCaptions',
-      }),
+    data() {
+      return {
+        img: mocks.info.img,
+        captions: mocks.info.imgCaption,
+      }
     },
 
     mounted() {

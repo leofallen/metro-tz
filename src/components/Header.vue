@@ -44,6 +44,37 @@ export default {
     onClick() {
       this.menuOpen = this.menuOpen ? false : true;
     }
+  },
+
+  mounted(){
+    let body = document.querySelector('html')
+    let header = document.querySelector('.main-header')
+    let news = document.querySelector('.info')
+
+
+    news.setAttribute('style', 'transform: translateY(' + header.offsetHeight + 'px)');
+
+    let pageScroll = () => {
+
+      let count;
+      let lastCount;
+
+      window.addEventListener('scroll', (evt) => {
+
+        count = body.scrollTop;
+
+        if(count < lastCount) {
+          header.classList.remove('main-header--hide');
+        } else {
+          header.classList.add('main-header--hide');
+        }
+
+        lastCount = body.scrollTop;
+      });
+    }
+
+    pageScroll()
+
   }
 }
 </script>
@@ -53,9 +84,23 @@ export default {
   @import "../sass/global.scss";
 
   .main-header {
+    position: fixed;
+    z-index: 11;
+
     display: flex;
     justify-content: space-between;
+    width: 100%;
     padding: 40px;
+
+    background-color: $white;
+
+    transition: all 0.3s linear;
+
+
+    &--hide {
+      transform: translateY(-100%);
+      transition: all 0.3s linear;
+    }
 
     &_burger {
       width: 26px;

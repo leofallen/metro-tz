@@ -23,13 +23,15 @@
 </template>
 
 <script>
-  import { mapGetters } from 'vuex';
   import Swiper from 'swiper/swiper-bundle';
   import 'swiper/swiper-bundle.css';
+  import mocks from '../mocks/mock';
+
 
   export default {
     data() {
       return {
+        data: mocks.accordion,
         items: [],
       }
     },
@@ -50,12 +52,6 @@
           this.items[i].open = true;
         }
       }
-    },
-
-    computed: {
-      ...mapGetters({
-        data: 'accordionInfo',
-      })
     },
 
     beforeMount() {
