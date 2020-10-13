@@ -4,7 +4,7 @@
 
     <div class="news_wrapper">
       <h1 class="news_title">Новости</h1>
-
+    
       <div class="news_select">
         <select class="news_year" name="year" id="year" @change="onYaerChange($event)">
           <option value="2019">2019 год</option>
@@ -232,8 +232,11 @@ export default {
       position: relative;
 
       display: inline-block;
-      margin-right: 75px;
       margin-bottom: 60px;
+
+      &:first-of-type {
+        margin-right: 70px;
+      }
 
       &:hover::before,
       &:hover::after {
@@ -269,7 +272,7 @@ export default {
       padding-right: 20px;
 
       font-family: $noto-font;
-      font-weight: 600;
+      font-weight: 400;
       font-size: 18px;
       line-height: 25px;
       letter-spacing: -0.02em;
@@ -342,10 +345,16 @@ export default {
 
   @media (max-width: 700px) {
     .news {
-      padding: 90px 10px;
+      padding: 70px 10px 90px;
 
       &_wrapper {
         max-width: 320px;
+      }
+
+      &_select {
+        &:first-of-type {
+          margin-right: 60px;
+        }
       }
 
       &_item {

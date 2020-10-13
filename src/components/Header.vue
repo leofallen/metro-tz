@@ -50,9 +50,11 @@ export default {
     let body = document.querySelector('html')
     let header = document.querySelector('.main-header')
     let news = document.querySelector('.info')
+    let accordion = document.querySelector('.accordion')
 
 
     news.setAttribute('style', 'transform: translateY(' + header.offsetHeight + 'px)');
+    accordion.setAttribute('style', 'margin-top: ' + header.offsetHeight + 'px');
 
     let pageScroll = () => {
 
@@ -90,6 +92,7 @@ export default {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    max-width: 1440px;
     padding: 40px;
 
     background-color: $white;
