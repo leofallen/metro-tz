@@ -235,15 +235,30 @@
 
   }
 
+
+// animation classes desktop
   @media (min-width: 769px) {
     .open {
+
+      justify-content: center;
+
       .accordion_item-hover {
         display: none;
       }
 
+      .accordion_title {
+        margin-top: 100px;
+      }
+
+      .accordion_sub-title {
+        max-width: 150px;
+        text-align: center;
+      }
+
       .accordion_button {
-        transform: translate(0, -300px)
-                   rotate(135deg);
+        transform: translate(0, -50px)
+                   rotate(135deg)
+                   scale(1.3);
         transition: all 0.8s ;
       }
 
@@ -251,6 +266,7 @@
         position: static;
         z-index: 1;
 
+        margin-top: 30px;
         margin-bottom: 0;
 
         opacity: 1;
@@ -344,8 +360,12 @@
       // animation classes tablet
       .open {
         flex-direction: column;
+        justify-content: center;
         min-height: 505px;
-        transition: all 0.3s;
+
+        .accordion_item-hover {
+          display: none;
+        }
 
 
         .accordion_sub-title {
@@ -360,7 +380,10 @@
         }
 
         .accordion_button {
-          display: none;
+          transform: translate(0, -50px)
+                     rotate(135deg)
+                     scale(1.3);
+          transition: all 0.8s ;
         }
       }
 

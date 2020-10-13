@@ -79,12 +79,12 @@ export default {
   mounted() {
     let infoLink = document.querySelector('.info_link--info');
     let newsLink = document.querySelector('.info_link--news');
-    let infoAnkor = document.querySelector('#info-block');
-    let newsAnkor = document.querySelector('#news-block');
+    let infoAnchor = document.querySelector('#info-block');
+    let newsAnchor = document.querySelector('#news-block');
 
     infoLink.addEventListener('click', (evt) => {
       evt.preventDefault();
-      infoAnkor.scrollIntoView({
+      infoAnchor.scrollIntoView({
         block: "start",
         behavior: "smooth"
       });
@@ -92,7 +92,7 @@ export default {
 
     newsLink.addEventListener('click', (evt) => {
       evt.preventDefault();
-      newsAnkor.scrollIntoView({
+      newsAnchor.scrollIntoView({
         block: "start",
         behavior: "smooth"
       });
