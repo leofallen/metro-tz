@@ -439,8 +439,9 @@
           min-height: unset;
 
           &_item {
-            min-height: 417px;
             flex-shrink: 0;
+            justify-content: center;
+            min-height: 417px;
           }
 
           &_item::after,
@@ -452,11 +453,28 @@
             display: none;
           }
 
+          &_title {
+            margin-bottom: 0;
+
+            font-size: 14px;
+            line-height: 25px;
+          }
+
+          &_sub-title {
+            margin-bottom: 40px;
+
+            font-size: 20px;
+            line-height: 25px;
+          }
+
           &_description {
             position: static;
             display: block;
             opacity: 1;
             margin-bottom: 0;
+
+            font-size: 16px;
+            line-height: 22px;
           }
         }
     }

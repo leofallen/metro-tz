@@ -283,18 +283,25 @@ export default {
       padding: 15px;
 
       &_title {
+        margin-bottom: 40px;
+
         font-size: 30px;
       }
 
       &_link {
+        margin-bottom: 30px;
 
         font-size: 16px;
         line-height: 22px;
       }
 
       &_text {
-        font-size: 18px;
-        line-height: 25px;
+        font-size: 16px;
+        line-height: 22px;
+
+        &:first-of-type {
+          margin-top: 20px;
+        }
       }
 
       &_list-item {

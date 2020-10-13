@@ -344,7 +344,16 @@ export default {
         max-width: 320px;
       }
 
+      &_title {
+        font-weight: bold;
+        font-size: 25px;
+        line-height: 30px;
+      }
+
       &_select {
+        font-size: 16px;
+        line-height: 22px;
+
         &:first-of-type {
           margin-right: 60px;
         }
@@ -353,6 +362,10 @@ export default {
       &_item {
         position: relative;
         margin-bottom: 64px;
+
+        & img {
+          width: 300px;
+        }
 
         &:nth-child(3n) {
           &::before {
@@ -382,6 +395,21 @@ export default {
             content: none;
           }
         }
+      }
+
+      &_item-title {
+        font-size: 20px;
+        line-height: 30px;
+      }
+
+      &_item-description {
+        font-size: 16px;
+        line-height: 22px;
+      }
+
+      &_item-date {
+        font-size: 12px;
+        line-height: 15px;
       }
     }
   }
