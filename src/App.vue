@@ -4,6 +4,7 @@
     <app-info></app-info>
     <app-accordion></app-accordion>
     <app-news></app-news>
+    <app-footer></app-footer>
   </div>
 </template>
 
@@ -12,6 +13,7 @@ import AppHeader from "./components/Header";
 import AppInfo from "./components/Info";
 import AppAccordion from "./components/Accordion";
 import AppNews from "./components/News";
+import AppFooter from "./components/Footer";
 
 export default {
   data() {
@@ -23,12 +25,13 @@ export default {
     AppHeader,
     AppInfo,
     AppAccordion,
-    AppNews
+    AppNews,
+    AppFooter
   }
 }
 </script>
 
-<style>
+<style >
 
 
 </style>
