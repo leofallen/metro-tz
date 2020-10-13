@@ -56,7 +56,7 @@
       </div>
     </div>
 
-    <a class="news_button" :class="buttonDisabled" :disabled="disabled" @click="plus">загрузить еще</a>
+    <a class="news_button" :class="buttonDisabled" @click="plus">загрузить еще</a>
 
   </section>
 </template>
@@ -73,15 +73,14 @@ export default {
       year: '2019',
       initialCount: 3,
       maxCount: 3,
-      disabled: false,
       currentItems: [],
+      sortItems: [],
     }
   },
 
   methods: {
     plus() {
-      this.disabledButton();
-      this.maxCount += 3;
+      this.maxCount += this.initialCount;
       this.sort();
     },
 
@@ -99,28 +98,24 @@ export default {
 
     sort() {
       this.currentItems = [];
+      this.sortItems = [];
       for (let item of this.news) {
         if((item.date.month == this.month || this.month == 'all') && item.date.year == this.year) {
-          this.currentItems.push(item);
+          this.sortItems.push(item);
         }
       }
 
-      this.currentItems = this.currentItems.slice(0, this.maxCount);
+      this.currentItems = this.sortItems.slice(0, this.maxCount);
     },
-
-    disabledButton() {
-      this.disabled = this.maxCount <= this.currentItems.length ? false : true;
-    }
   },
 
   computed: {
     buttonDisabled() {
-      return this.maxCount <= this.currentItems.length ? false : 'news_button--disabled';
+      return this.maxCount >= this.sortItems.length ? 'news_button--hide' : false
     }
   },
 
   beforeMount() {
-    console.log(this.mocks)
     this.sort()
   }
 }
@@ -128,14 +123,6 @@ export default {
 
 <style lang="scss">
   @import "../sass/global.scss";
-
-  .news_button--disabled {
-    opacity: 0.3;
-
-    &:hover {
-      opacity: 0.3 !important;
-    }
-  }
 
   .news_inner {
     display: flex;
@@ -304,6 +291,10 @@ export default {
       &:hover {
         cursor: pointer;
         opacity: 0.6;
+      }
+
+      &--hide {
+        display: none;
       }
     }
   }
