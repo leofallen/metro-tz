@@ -131,6 +131,13 @@
     background-repeat: no-repeat;
     background-position: center;
 
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("/img/alley-desktop@2x.jpg");
+      background-repeat: no-repeat;
+      background-size: 1440px auto;
+      background-position: center 0;;
+    }
+
     &_item {
       position: relative;
 
@@ -319,6 +326,11 @@
 
         background-image: url('/img/alley-tablet@1x.jpg');
 
+        @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+          background-image: url("/img/alley-tablet@2x.jpg");
+          background-size: 1024px auto;
+        }
+
         &_container {
           flex-direction: column;
         }
@@ -452,6 +464,11 @@
     @media (max-width: 320px) {
         .accordion {
           background-image: url('/img/alley-mobile@1x.jpg');
+
+          @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+            background-image: url("/img/alley-mobile@2x.jpg");
+            background-size: 320px auto;
+          }
         }
     }
 
