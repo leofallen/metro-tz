@@ -139,6 +139,10 @@
 
     .swiper-button-prev {
       margin-left: auto;
+      
+      &::after {
+        content: none;
+      }
     }
 
     .swiper-button-next {
@@ -146,6 +150,10 @@
 
       & img {
         transform: rotate(180deg);
+      }
+
+      &::after {
+        content: none;
       }
     }
   
