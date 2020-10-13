@@ -221,6 +221,8 @@ export default {
       display: inline-block;
       margin-bottom: 60px;
 
+      background-color: transparent;
+
       &:first-of-type {
         margin-right: 70px;
       }
