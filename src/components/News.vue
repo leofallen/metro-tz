@@ -31,12 +31,12 @@
         </select>
       </div>
       <div class="news_inner">
-        <transition v-for="(item, i) in currentItems"
+        <transition v-for="(item) in currentItems"
                     :key="news.indexOf(item)"
                     name="fade"
                     appear>
           <a class="news_item"
-             :key="news.indexOf(item, i)"
+             :key="news.indexOf(item)"
 
              >
             <article>
